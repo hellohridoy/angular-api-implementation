@@ -3,16 +3,29 @@
   <label for="check" class="checkbtn">
     <i class="fas fa-bars"></i>
   </label>
-  <label class="logo">GFG</label>
+  <label class="logo">.AAI.</label>
   <ul>
     <li><a routerLink="/" routerLinkActive="active">Home</a></li>
     <li><a routerLink="/about" routerLinkActive="active">About</a></li>
-    <li><a routerLink="/university" routerLinkActive="active">University</a></li>
     <li><a routerLink="/teacher" routerLinkActive="active">Teacher</a></li>
     <li><a routerLink="/student" routerLinkActive="active">Student</a></li>
     <li><a routerLink="/department" routerLinkActive="active">Department</a></li>
     <li><a routerLink="/contact" routerLinkActive="active">Contact with us</a></li>
+
+    <!-- Dropdown for University Menu -->
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+        University <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a routerLink="/university/add-university" routerLinkActive="active">Post University</a></li>
+        <li><a routerLink="/university/university-info" routerLinkActive="active">University Info</a></li>
+        <li><a routerLink="/university/view" routerLinkActive="active">View University</a></li>
+        <li><a routerLink="/university/update" routerLinkActive="active">Update University Info</a></li>
+      </ul>
+    </li>
   </ul>
+
 </nav>
 
 
