@@ -1,0 +1,148 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">University Information</h2>
+
+  <form [formGroup]="universityForm" (ngSubmit)="onSubmit()">
+    <!-- University Name -->
+    <div class="form-group row">
+      <label for="universityName" class="col-sm-2 col-form-label">University Name</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="universityName" formControlName="universityName" placeholder="Enter university name">
+        <div *ngIf="universityForm.get('universityName').touched && universityForm.get('universityName').invalid" class="text-danger">
+          University name is required.
+        </div>
+      </div>
+    </div>
+
+    <!-- University Address -->
+    <div class="form-group row">
+      <label for="universityAddress" class="col-sm-2 col-form-label">University Address</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="universityAddress" formControlName="universityAddress" placeholder="Enter university address">
+        <div *ngIf="universityForm.get('universityAddress').touched && universityForm.get('universityAddress').invalid" class="text-danger">
+          University address is required.
+        </div>
+      </div>
+    </div>
+
+    <!-- University Type -->
+    <div class="form-group row">
+      <label for="universityType" class="col-sm-2 col-form-label">University Type</label>
+      <div class="col-sm-10">
+        <select class="form-control" id="universityType" formControlName="universityType">
+          <option value="PUBLIC">Public</option>
+          <option value="PRIVATE">Private</option>
+        </select>
+        <div *ngIf="universityForm.get('universityType').touched && universityForm.get('universityType').invalid" class="text-danger">
+          University type is required.
+        </div>
+      </div>
+    </div>
+
+    <!-- University Rating -->
+    <div class="form-group row">
+      <label for="universityRating" class="col-sm-2 col-form-label">University Rating</label>
+      <div class="col-sm-10">
+        <input type="number" step="0.1" class="form-control" id="universityRating" formControlName="universityRating" placeholder="Enter rating (e.g., 4.6)">
+        <div *ngIf="universityForm.get('universityRating').touched && universityForm.get('universityRating').invalid" class="text-danger">
+          University rating is required and must be between 0 and 5.
+        </div>
+      </div>
+    </div>
+
+    <!-- University Description -->
+    <div class="form-group row">
+      <label for="universityDescription" class="col-sm-2 col-form-label">Description</label>
+      <div class="col-sm-10">
+        <textarea class="form-control" id="universityDescription" formControlName="universityDescription" rows="3" placeholder="Enter university description"></textarea>
+        <div *ngIf="universityForm.get('universityDescription').touched && universityForm.get('universityDescription').invalid" class="text-danger">
+          Description is required.
+        </div>
+      </div>
+    </div>
+
+    <!-- University Image URL -->
+    <div class="form-group row">
+      <label for="universityImage" class="col-sm-2 col-form-label">University Image URL</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="universityImage" formControlName="universityImage" placeholder="Enter image URL">
+        <div *ngIf="universityForm.get('universityImage').touched && universityForm.get('universityImage').invalid" class="text-danger">
+          Image URL is required.
+        </div>
+      </div>
+    </div>
+
+    <!-- Starting Date -->
+    <div class="form-group row">
+      <label for="startingDate" class="col-sm-2 col-form-label">Starting Date</label>
+      <div class="col-sm-10">
+        <input type="date" class="form-control" id="startingDate" formControlName="startingDate">
+        <div *ngIf="universityForm.get('startingDate').touched && universityForm.get('startingDate').invalid" class="text-danger">
+          Starting date is required.
+        </div>
+      </div>
+    </div>
+
+    <!-- Casually Opens At -->
+    <div class="form-group row">
+      <label for="casuallyOpensAt" class="col-sm-2 col-form-label">Casually Opens At</label>
+      <div class="col-sm-10">
+        <input type="datetime-local" class="form-control" id="casuallyOpensAt" formControlName="casuallyOpensAt">
+        <div *ngIf="universityForm.get('casuallyOpensAt').touched && universityForm.get('casuallyOpensAt').invalid" class="text-danger">
+          This field is required.
+        </div>
+      </div>
+    </div>
+
+    <!-- Campus Size -->
+    <div class="form-group row">
+      <label for="campusSize" class="col-sm-2 col-form-label">Campus Size</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="campusSize" formControlName="campusSize" placeholder="Enter campus size (e.g., 168 acres)">
+        <div *ngIf="universityForm.get('campusSize').touched && universityForm.get('campusSize').invalid" class="text-danger">
+          Campus size is required.
+        </div>
+      </div>
+    </div>
+
+    <!-- Student Body -->
+    <div class="form-group row">
+      <label for="studentBody" class="col-sm-2 col-form-label">Student Body</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" id="studentBody" formControlName="studentBody" placeholder="Enter student body size (e.g., 11500)">
+        <div *ngIf="universityForm.get('studentBody').touched && universityForm.get('studentBody').invalid" class="text-danger">
+          Student body is required and must be at least 1.
+        </div>
+      </div>
+    </div>
+
+    <!-- Endowment -->
+    <div class="form-group row">
+      <label for="endowment" class="col-sm-2 col-form-label">Endowment</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="endowment" formControlName="endowment" placeholder="Enter endowment (e.g., 18 billion USD)">
+        <div *ngIf="universityForm.get('endowment').touched && universityForm.get('endowment').invalid" class="text-danger">
+          Endowment is required.
+        </div>
+      </div>
+    </div>
+
+    <!-- Notable Programs -->
+    <div class="form-group row">
+      <label for="notablePrograms" class="col-sm-2 col-form-label">Notable Programs</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="notablePrograms" formControlName="notablePrograms" placeholder="Enter notable programs (comma-separated)">
+        <div *ngIf="universityForm.get('notablePrograms').touched && universityForm.get('notablePrograms').invalid" class="text-danger">
+          Notable programs are required.
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Submit Button -->
+    <div class="form-group row mt-4">
+      <div class="col-sm-10 offset-sm-2">
+        <button type="submit" class="btn btn-primary" [disabled]="universityForm.invalid">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
